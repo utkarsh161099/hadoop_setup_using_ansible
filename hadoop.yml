@@ -1,0 +1,46 @@
+- hosts: all
+  tasks:
+        - name: Copying the Packages
+          copy:
+             src: /root/hadoop_software/
+             dest: /root/
+        - name: Installing the packages
+          command: rpm -ivh jdk-8u171-linux-x64.rpm
+          command: rpm -ivh hadoop-1.2.1-1.x86_64.rpm --force
+
+- hosts: namenode
+  vars: 
+          - name_dir: name_dir
+  tasks:
+          - name: Creating Namenode Directory
+            file:
+                path: /{{name_dir}}
+                state: directory
+          - name: Updating the configuration files of NameNode
+            template:
+                    src: core-site-name.xml.j2
+                    dest: /etc/hadoop/core-site.xml
+          - template:
+                  src: hdfs-site-name.xml.j2
+                  dest: /etc/hadoop/hdfs-site.xml
+          - name: Formatting & Starting Namenode
+            command: hadoop namenode -format -Y
+            command: hadoop-daemon.sh start namenode
+
+- hosts: datanode
+  vars: 
+        - data_dir: data_dir
+  tasks:
+              - name: Creating data node directory
+                file:
+                       path: /{{data_dir}}
+                       state: directory
+              - name: Updating Config files of Datanode
+                template:
+                      src: hdfs-data.xml.j2
+                      dest: /etc/hadoop/hdfs-site.xml
+              - template:
+                    src: core-site-data.xml.j2
+                    dest: /etc/hadoop/core-site.xml
+              - name: Starting Datanode	 
+                command: hadoop-daemon.sh start datanode
