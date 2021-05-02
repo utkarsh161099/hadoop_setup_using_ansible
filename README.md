@@ -1,7 +1,7 @@
 # Hadoop Setup using Ansible
 ***We will configure Hadoop NameNode and DataNode using Ansible.***
 
-## Steps to perform
+## Steps to perform-->  
 
 :bulb: *Copy packages:- Oracle-jdk, Hadoop V1* :- <br>
 :bulb: *Install Oracle JDK and Hadoop* <br>
@@ -11,4 +11,3 @@
 :bulb: *Start Namenode and Datanode services respectively.* 
 
 
-<img src="‪localhost://C:/Users/utkarsh/Desktop/project/had1.jpg" alt="a"/>
