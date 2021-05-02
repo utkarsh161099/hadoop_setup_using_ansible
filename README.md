@@ -1,5 +1,5 @@
->  Hadoop Setup using Ansible
-We will configure Hadoop NameNode and DataNode using Ansible.
+# Hadoop Setup using Ansible
+***We will configure Hadoop NameNode and DataNode using Ansible.***
 
 ## Steps to perform
 
@@ -10,3 +10,5 @@ We will configure Hadoop NameNode and DataNode using Ansible.
 :bulb: *Format the directory which is located on the system to be configured as Namenode.* <br>
 :bulb: *Start Namenode and Datanode services respectively.* 
 
+
+<img src="‪C:/Users/utkarsh/Desktop/project/had1.jpg" alt="a"/>
