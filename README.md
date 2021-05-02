@@ -11,4 +11,4 @@
 :bulb: *Start Namenode and Datanode services respectively.* 
 
 
-<img src="‪C:/Users/utkarsh/Desktop/project/had1.jpg" alt="a"/>
+<img src="‪localhost://C:/Users/utkarsh/Desktop/project/had1.jpg" alt="a"/>
